@@ -1,0 +1,10 @@
+cat
+dog
+walrus
+lizard
+monkey
+whale
+walrus
+parrot
+axolotyl
+penguin
