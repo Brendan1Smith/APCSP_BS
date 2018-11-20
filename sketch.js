@@ -1,47 +1,32 @@
 //Brendan Smith
 //AP Comp Sci Principles
-//  Global variables
+//Snake Game
 
+//global variables
+var w = 20;
+var cols, rows;
+var snake;
+var food;
+var score = 20;
 
-//  Global variables
-// set up code here
-var txt;
-
-function preload(){
-  //function's name is LoadStrings
-  txt = loadStrings("words.txt");
-}
 function setup() {
-noCanvas();
-console.log("before bubble sorting ");
-console.log(txt);
-myBubbleSort(txt);
-console.log("after bubble sorting");
-console.log(txt);
+//set up code
+var cnv = createCanvas(800, 800);
+cols = width/w;
+rows = height/w;
+cnv.position((windowWidth-width/2, height/2), CreateVector(1, 0));
 }
-
-// function that sorts
-function myBubbleSort(){
-  for(var i = txt.length - 1; i >= 1; i-- ){
-    for(var j = 0; j < txt.length; j++ ){
-      // defining i and j
-      right_element = txt[i];
-      left_element = txt[j];
-      // if statement states when they should switch
-if(right_element< left_element){
-  // calls swap function
-  swap(i, j);
-}
-
-}
+// draw function, snake.run() food.run(), if tangled new Game
+function draw() {
+snake.run(),
 
 
 }
-}
+// adjust snake, velocity
+function keyPressed(){
+text(keyCode, 50, 50);
 
-// word swapping function
-function swap(i, j){
-   var temp = txt[i];
-   txt[i] = txt[j];
-   txt[j] = temp
+if(keyCode === UP_ARROW){
+  snake.vel = createVector(0, -1)
+  }
 }
