@@ -2,28 +2,47 @@
 //AP Comp Sci Principles
 //Snake Game
 
-//global variables
-var w = 20;
-var cols, rows;
-var snake;
+//  Global variables
+var scl = 20;
+var Snake;
+var Food;
 
 function setup() {
-//set up code
-var cnv = createCanvas(800, 800);
-cols = width/w;
-rows = height/w;
-cnv.position((windowWidth-width/2, height/2), CreateVector(1, 0));
+  createCanvas(800, 800);
+  snake = new Snake();
+  food  = new Food();
+  frameRate(10);
 }
 
 function draw() {
-snake.run(),
+  background(0,0,150);
 
+  snake.eat(food);
+  snake.move();
+  snake.draw();
+  food.draw();
 }
 
-function keyPressed(){
-text(keyCode, 50, 50);
-
-if(keyCode === UP_ARROW){
-  snake.vel = createVector(0, -1)
+function keyPressed() {
+  if (keyCode === 87) {
+    snake.dir(0, -1);
+  } else if (keyCode === 83) {
+    snake.dir(0, 1);s
+  } else if (keyCode === 68) {
+    snake.dir(1, 0);
+  } else if (keyCode === 65) {
+    snake.dir(-1, 0);
   }
+}
+
+function cols() {
+  return floor(width / scl);
+}
+
+function rows() {
+  return floor(height / scl);
+}
+
+function randomVector() {
+  return createVector(floor(random(cols())), floor(random(rows())));
 }

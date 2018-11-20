@@ -1,4 +1,5 @@
-/* Brendan Smith
+/* 
+**Brendan Smith
 **Lab 911:CheckerBoard
 **
 **
