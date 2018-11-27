@@ -4,8 +4,8 @@
 
 //  Global variables
 var scl = 20;
-var Snake;
-var Food;
+var snake;
+var food;
 
 function setup() {
   createCanvas(800, 800);
@@ -25,13 +25,13 @@ function draw() {
 
 function keyPressed() {
   if (keyCode === 87) {
-    snake.dir(0, -1);
+    snake.dir(0, -1);w
   } else if (keyCode === 83) {
-    snake.dir(0, 1);s
+    snake.dir(0, 1);a
   } else if (keyCode === 68) {
-    snake.dir(1, 0);
+    snake.dir(1, 0);s
   } else if (keyCode === 65) {
-    snake.dir(-1, 0);
+    snake.dir(-1, 0);d
   }
 }
 
