@@ -27,7 +27,7 @@ function Snake() {
   }
 
   this.move = function() {
-    // put last square of tail in front of the line
+    // puts the last square of tail at the front of the line
     if (this.tail.length > 0) {
       var tipOfTail = this.tail.pop();
       tipOfTail.x = this.x;
@@ -35,15 +35,15 @@ function Snake() {
       this.tail.unshift(tipOfTail);
     }
 
-    // move head
+    // allows the snake to move its head
     this.x += this.xspeed * scl;
     this.y += this.yspeed * scl;
 
-    // wrap around right and bottom edges
+    // wrap the right and bottom edges
     this.x %= width;
     this.y %= height;
 
-    // wrap around left and top edges
+    // same thing but for the top and left edges
     if (this.x < 0) {
       this.x = width - scl;
     }
@@ -51,9 +51,9 @@ function Snake() {
       this.y = height - scl;
     }
   }
-
+// draws the snake on the cans
   this.draw = function() {
-    fill(255);
+    fill(0,255,0);
     rect(this.x, this.y, scl, scl);
     for(var i = 0; i < this.tail.length; i++) {
       rect(this.tail[i].x,
