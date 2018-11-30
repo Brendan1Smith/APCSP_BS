@@ -23,6 +23,8 @@ function Snake() {
       food.eaten();
       this.points++;
       this.tail.push(createVector(this.x, this.y));
+      this.eat(food,1);
+      score = score + 1;
     }
   }
 
@@ -53,7 +55,7 @@ function Snake() {
   }
 // draws the snake on the cans
   this.draw = function() {
-    fill(0,255,0);
+    fill(random(0,255), random(0, 255), random(0, 255));
     rect(this.x, this.y, scl, scl);
     for(var i = 0; i < this.tail.length; i++) {
       rect(this.tail[i].x,

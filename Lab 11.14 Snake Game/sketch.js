@@ -6,22 +6,33 @@
 var scl = 20;
 var snake;
 var food;
+var score = 0;
 
 function setup() {
   createCanvas(800, 800);
   snake = new Snake();
   food  = new Food();
-  frameRate(25);
+  frameRate(15);
 }
 // draw function
 function draw() {
-  background(200,50,200);
+  background(25,50,225);
 
+  text("your score " + score, 380, 50)
+  noStroke ();
   snake.eat(food);
   snake.move();
   snake.draw();
   food.draw();
+  Score();
 }
+//score
+function Score(){
+if (score > 3)
+  fill(255,0,5);
+  text("YOU WON!!", 380, 40);
+}
+
 // Key Pressed is a function that allows the player to move the snake
 function keyPressed() {
   //uses w, a, s, d keys to move instead of arrows
