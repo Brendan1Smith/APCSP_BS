@@ -1,3 +1,4 @@
+
 //Brendan Smith
 //AP Comp Sci Principles
 //Snake Game
@@ -42,15 +43,15 @@ function Snake() {
     this.y += this.yspeed * scl;
 
     // wrap the right and bottom edges
-    this.x %= width;
-    this.y %= height;
+    this.x = constrain(this.x, 0, width-scl);
+    this.y = constrain(this.y, 0, height-scl);
 
     // same thing but for the top and left edges
     if (this.x < 0) {
-      this.x = width - scl;
+      this.x = constrain(this.x, 0, width-scl);
     }
     if (this.y < 0) {
-      this.y = height - scl;
+      this.y = constrain(this.y, 0, width-scl);
     }
   }
 // draws the snake on the cans

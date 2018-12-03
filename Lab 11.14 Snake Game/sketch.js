@@ -12,7 +12,7 @@ function setup() {
   createCanvas(800, 800);
   snake = new Snake();
   food  = new Food();
-  frameRate(15);
+  frameRate(17);
 }
 // draw function
 function draw() {
@@ -30,7 +30,7 @@ function draw() {
 function Score(){
 if (score > 3)
   fill(255,0,5);
-  text("YOU WON!!", 380, 40);
+  text("YOU WILL LOOSE!", 380, 40);
 }
 
 // Key Pressed is a function that allows the player to move the snake
